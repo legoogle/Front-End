@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr Lekhotla</title>
+    <style>
+        .btn{
+        text-decoration: none;
+        border-color: #007baf;
+        background-color: #28bbf3;
+        border-style: solid;
+        border-width: 0px 0px 3px;
+        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+        color: #FFFFFF;	   
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-block;
+        font-style: normal;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        transition: all 200ms ease-in-out 0s;
+        white-space: nowrap;	
+        font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+        font-weight: 700;	
+        padding: 19px 39px 18px;
+
+    }
+    .active{
+        background-color: #293743;
+        border-color: #1a2732;
+      }
+
+    a{
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1>Js Play Ground</h1>
+    <div class="wrapper">
+        <ul>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+             <li class="btn"><a href="#">Test Link</a></li>
+        </ul>
+
+    </div>
+
+    
+    <script>
+        function toggleItem(elem) {
+          for (var i = 0; i < elem.length; i++) {
+            elem[i].addEventListener("click", function(e) {
+              var current = this;
+              for (var i = 0; i < elem.length; i++) {
+                if (current != elem[i]) {
+                  elem[i].classList.remove('active');
+                } else if (current.classList.contains('active') === true) {
+                  current.classList.remove('active');
+                } else {
+                  current.classList.add('active')
+                }
+              }
+              e.preventDefault();
+            });
+          };
+        }
+        toggleItem(document.querySelectorAll('.btn'));
+    </script>
+</body>
+</html>
